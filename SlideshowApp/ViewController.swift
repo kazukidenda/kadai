@@ -74,9 +74,21 @@ class ViewController: UIViewController {
         let secound:secound = segue.destination as! secound
         //画像のデータを渡す
         secound.name2 = imageView.image!
-        self.timer.invalidate()   // タイマーを停止する
-        
-    }
+    
+if self.timer != nil {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil
+   
+    suraidshow.setTitle("再生", for: .normal)
+    
+    //UIOutletを有効化
+    susumu.isEnabled = true
+    //UIOutlletを有効化
+    modoru.isEnabled = true
+
+}
+            
+        }
     
     //スライドが2秒毎に切り替わる動作
     @objc func updateTimer(_ timer: Timer) {
